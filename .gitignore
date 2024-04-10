@@ -1,0 +1,16 @@
+# Dev env setup related files
+**.vscode
+**.cache
+**compile_commands.json
+
+
+# Visualiser folder
+push_swap_visualizer/
+
+# Files related to the project
+push_swap
+checker
+***.o
+
+# Valgrind files
+**vgcore*
