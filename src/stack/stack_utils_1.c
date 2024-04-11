@@ -6,7 +6,7 @@
 /*   By: inazaria <inazaria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 02:42:13 by inazaria          #+#    #+#             */
-/*   Updated: 2024/04/10 02:47:49 by inazaria         ###   ########.fr       */
+/*   Updated: 2024/04/11 15:55:55 by inazaria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,28 +15,11 @@
 char	**parse_stack_input(int argc, char *argv[])
 {
 	char	**stack_elems;
-	char	**tmp;
-	int		counter1;
-	int		counter2;
 
 	(void) argc;
 	stack_elems = ft_split(argv[1], ' ');
 	if (stack_elems == NULL)
 		return (NULL);
-	tmp = stack_elems;
-	counter1 = 0;
-	counter2 = 0;
-	while (tmp[counter1])
-	{
-		while (tmp[counter1][counter2])
-		{
-			if (!(ft_isdigit(tmp[counter1][counter2])))
-				return (NULL);
-			counter2++;
-		}
-		counter2 = 0;
-		counter1++;
-	}
 	return (stack_elems);
 }
 
@@ -60,16 +43,18 @@ int	*return_int_stack(int argc, char *argv[])
 	int		*stack_ptr;
 	int		counter;
 
-	int_stack = (int *) ft_calloc(sizeof(int *), 500);
-	if (int_stack == NULL)
+	if (verify_input(argv[1]) == 0)
 		return (NULL);
-	stack_ptr = int_stack;
 	stack_input = parse_stack_input(argc, argv);
 	if (stack_input == NULL)
 	{
 		free_stack_splited_input(stack_input, count_words(argv[1], ' '));
 		return (NULL);
 	}
+	int_stack = ft_calloc(sizeof(int *), count_words(argv[1], ' '));
+	if (int_stack == NULL)
+		return (NULL);
+	stack_ptr = int_stack;
 	counter = -1;
 	while (stack_input[++counter])
 		stack_ptr[counter] = ft_atoi(stack_input[counter]);
@@ -90,10 +75,4 @@ int	get_stack_len(int argc, char *argv[])
 		stack_len++;
 	free_stack_splited_input(stack_input, count_words(argv[1], ' '));
 	return (stack_len);
-}
-
-void	free_stack(t_stack *stack)
-{
-	free(stack->elems);
-	free(stack);
 }
