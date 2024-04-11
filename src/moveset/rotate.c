@@ -6,7 +6,7 @@
 /*   By: inazaria <inazaria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 19:32:51 by inazaria          #+#    #+#             */
-/*   Updated: 2024/04/10 15:07:35 by inazaria         ###   ########.fr       */
+/*   Updated: 2024/04/10 17:14:42 by inazaria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ void	rotate(t_stack *stack)
 	int	*elems;
 	int	counter;
 
+	if (stack->length < 2)
+		return ;
 	elems = stack->elems;
 	first = elems[0];
 	counter = 0;
@@ -26,7 +28,7 @@ void	rotate(t_stack *stack)
 		elems[counter] = elems[counter + 1];
 		counter++;
 	}
-	elems[counter] = first;
+	elems[stack->length - 1] = first;
 }
 
 void	ra(t_stack *stack_a)
@@ -41,6 +43,6 @@ void	rb(t_stack *stack_b)
 
 void	rr(t_stack *stack_a, t_stack *stack_b)
 {
-	rotate(stack_a);
-	rotate(stack_b);
+	ra(stack_a);
+	rb(stack_b);
 }
