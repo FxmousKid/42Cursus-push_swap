@@ -6,7 +6,7 @@
 /*   By: inazaria <inazaria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 19:27:33 by inazaria          #+#    #+#             */
-/*   Updated: 2024/04/10 15:08:03 by inazaria         ###   ########.fr       */
+/*   Updated: 2024/04/11 15:50:19 by inazaria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ typedef struct s_stack
 }				t_stack;
 
 // Manipulating the Stack itself
+int		verify_input(char *input);
 void	free_stack_splited_input(char *stack[], int stack_len);
 int		*return_int_stack(int argc, char *argv[]);
 char	**parse_stack_input(int argc, char *argv[]);
@@ -37,7 +38,14 @@ t_stack	*make_stack_b(int len_stack_a);
 void	ra(t_stack *stack_a);
 void	rb(t_stack *stack_b);
 void	rr(t_stack *stack_a, t_stack *stack_b);
-
+void	rra(t_stack *stack_a);
+void	rrb(t_stack *stack_b);
+void	rrr(t_stack *stack_a, t_stack *stack_b);
+void	pa(t_stack *stack_a, t_stack *stack_b);
+void	pb(t_stack *stack_a, t_stack *stack_b);
+void	sa(t_stack *stack_a);
+void	sb(t_stack *stack_b);
+void	ss(t_stack *stack_a, t_stack *stack_b);
 
 // Helper functions
 int		count_occ(char *str, char *charset);
