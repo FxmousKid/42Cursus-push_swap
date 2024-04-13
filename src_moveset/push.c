@@ -6,7 +6,7 @@
 /*   By: inazaria <inazaria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 17:50:13 by inazaria          #+#    #+#             */
-/*   Updated: 2024/04/11 15:10:41 by inazaria         ###   ########.fr       */
+/*   Updated: 2024/04/13 12:49:44 by inazaria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,9 +53,11 @@ void	push(t_stack *from, t_stack *to)
 void	pa(t_stack *stack_a, t_stack *stack_b)
 {
 	push(stack_b, stack_a);
+	ft_printf("pa\n");
 }
 
 void	pb(t_stack *stack_a, t_stack *stack_b)
 {
 	push(stack_a, stack_b);
+	ft_printf("pb\n");
 }

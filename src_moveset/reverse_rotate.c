@@ -1,42 +1,50 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   swap.c                                             :+:      :+:    :+:   */
+/*   reverse_rotate.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: inazaria <inazaria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/11 12:20:20 by inazaria          #+#    #+#             */
-/*   Updated: 2024/04/11 15:09:26 by inazaria         ###   ########.fr       */
+/*   Created: 2024/04/10 17:07:25 by inazaria          #+#    #+#             */
+/*   Updated: 2024/04/13 02:26:12 by inazaria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/common_funcs.h"
 
-void	swap(t_stack *stack)
+void	reverse_rotate(t_stack *stack)
 {
-	int	tmp;
+	int	last;
 	int	*elems;
+	int	len;
 
 	if (stack->length < 2)
 		return ;
 	elems = stack->elems;
-	tmp = elems[0];
-	elems[0] = elems[1];
-	elems[1] = tmp;
+	len = stack->length;
+	last = elems[len - 1];
+	while (len > 0)
+	{
+		elems[len] = elems[len - 1];
+		len--;
+	}
+	elems[0] = last;
 }
 
-void	sa(t_stack *stack_a)
+void	rra(t_stack *stack_a)
 {
-	swap(stack_a);
+	reverse_rotate(stack_a);
+	ft_printf("rra\n");
 }
 
-void	sb(t_stack *stack_b)
+void	rrb(t_stack *stack_b)
 {
-	swap(stack_b);
+	reverse_rotate(stack_b);
+	ft_printf("rrb\n");
 }
 
-void	ss(t_stack *stack_a, t_stack *stack_b)
+void	rrr(t_stack *stack_a, t_stack *stack_b)
 {
-	sa(stack_a);
-	sb(stack_b);
+	rra_no_print(stack_a);
+	rrb_no_print(stack_b);
 }

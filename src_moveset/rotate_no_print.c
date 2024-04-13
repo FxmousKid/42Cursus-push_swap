@@ -1,28 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   make_stack_b.c                                     :+:      :+:    :+:   */
+/*   rotate_no_print.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: inazaria <inazaria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/09 22:14:53 by inazaria          #+#    #+#             */
-/*   Updated: 2024/04/11 15:16:59 by inazaria         ###   ########.fr       */
+/*   Created: 2024/04/13 00:39:06 by inazaria          #+#    #+#             */
+/*   Updated: 2024/04/13 03:11:11 by inazaria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/common_funcs.h"
 
-t_stack	*make_stack_b(int len_stack_a)
+void	ra_no_print(t_stack *stack_a)
 {
-	t_stack	*stack_b;
-	int		*stack_elems;
+	rotate(stack_a);
+}
 
-	stack_b = (t_stack *) ft_calloc(sizeof(t_stack), 1);
-	if (!stack_b)
-		return (NULL);
-	stack_elems = (int *) ft_calloc(sizeof(int *), len_stack_a);
-	if (!stack_elems)
-		return (free(stack_b), NULL);
-	*stack_b = (t_stack){.elems = stack_elems, .length = 0};
-	return (stack_b);
+void	rb_no_print(t_stack *stack_b)
+{
+	rotate(stack_b);
+}
+
+void	rr_no_print(t_stack *stack_a, t_stack *stack_b)
+{
+	ra_no_print(stack_a);
+	rb_no_print(stack_b);
 }

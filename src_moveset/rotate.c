@@ -6,7 +6,7 @@
 /*   By: inazaria <inazaria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 19:32:51 by inazaria          #+#    #+#             */
-/*   Updated: 2024/04/10 17:14:42 by inazaria         ###   ########.fr       */
+/*   Updated: 2024/04/13 00:40:49 by inazaria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,11 +34,13 @@ void	rotate(t_stack *stack)
 void	ra(t_stack *stack_a)
 {
 	rotate(stack_a);
+	ft_printf("ra\n");
 }
 
 void	rb(t_stack *stack_b)
 {
 	rotate(stack_b);
+	ft_printf("rb\n");
 }
 
 void	rr(t_stack *stack_a, t_stack *stack_b)

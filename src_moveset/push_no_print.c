@@ -1,48 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   reverse_rotate.c                                   :+:      :+:    :+:   */
+/*   push_no_print.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: inazaria <inazaria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/10 17:07:25 by inazaria          #+#    #+#             */
-/*   Updated: 2024/04/11 15:10:30 by inazaria         ###   ########.fr       */
+/*   Created: 2024/04/13 00:31:46 by inazaria          #+#    #+#             */
+/*   Updated: 2024/04/13 02:26:00 by inazaria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/common_funcs.h"
 
-void	reverse_rotate(t_stack *stack)
+void	pa_no_print(t_stack *stack_a, t_stack *stack_b)
 {
-	int	last;
-	int	*elems;
-	int	len;
-
-	if (stack->length < 2)
-		return ;
-	elems = stack->elems;
-	len = stack->length;
-	last = elems[len - 1];
-	while (len > 0)
-	{
-		elems[len] = elems[len - 1];
-		len--;
-	}
-	elems[0] = last;
+	push(stack_b, stack_a);
 }
 
-void	rra(t_stack *stack_a)
+void	pb_no_print(t_stack *stack_a, t_stack *stack_b)
 {
-	reverse_rotate(stack_a);
-}
-
-void	rrb(t_stack *stack_b)
-{
-	reverse_rotate(stack_b);
-}
-
-void	rrr(t_stack *stack_a, t_stack *stack_b)
-{
-	rra(stack_a);
-	rrb(stack_b);
+	push(stack_a, stack_b);
 }

@@ -1,42 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stack_utils_2.c                                    :+:      :+:    :+:   */
+/*   reverse_rotate_no_print.c                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: inazaria <inazaria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/10 15:01:32 by inazaria          #+#    #+#             */
-/*   Updated: 2024/04/11 15:54:26 by inazaria         ###   ########.fr       */
+/*   Created: 2024/04/13 00:34:45 by inazaria          #+#    #+#             */
+/*   Updated: 2024/04/13 03:35:56 by inazaria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/common_funcs.h"
 
-void	display_stack(t_stack *stack)
+void	rra_no_print(t_stack *stack_a)
 {
-	int	len;
-	int	*elems;
-
-	len = stack->length;
-	elems = stack->elems;
-	while (len--)
-		ft_printf("| %d |\n", *elems++);
-	ft_printf("____\n");
+	reverse_rotate(stack_a);
 }
 
-void	free_stack(t_stack *stack)
+void	rrb_no_print(t_stack *stack_b)
 {
-	free(stack->elems);
-	free(stack);
+	reverse_rotate(stack_b);
 }
 
-int	verify_input(char *input)
+void	rrr_no_print(t_stack *stack_a, t_stack *stack_b)
 {
-	while (input && *input)
-	{
-		if (!ft_isdigit(*input) && *input != ' ')
-			return (0);
-		input++;
-	}
-	return (1);
+	rra_no_print(stack_a);
+	rrb_no_print(stack_b);
 }
