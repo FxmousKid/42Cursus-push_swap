@@ -12,5 +12,8 @@ checker
 ***.o
 libft/libft.a
 
+# Visualiser files
+**imgui.ini
+
 # Valgrind files
 **vgcore*
