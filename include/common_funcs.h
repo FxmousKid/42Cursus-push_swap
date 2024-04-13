@@ -6,7 +6,7 @@
 /*   By: inazaria <inazaria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 19:27:33 by inazaria          #+#    #+#             */
-/*   Updated: 2024/04/13 00:41:38 by inazaria         ###   ########.fr       */
+/*   Updated: 2024/04/13 19:20:27 by inazaria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,6 @@ void	pb_no_print(t_stack *stack_a, t_stack *stack_b);
 void	sa_no_print(t_stack *stack_a);
 void	sb_no_print(t_stack *stack_b);
 void	ss_no_print(t_stack *stack_a, t_stack *stack_b);
-
 
 // Helper functions
 int		count_occ(char *str, char *charset);

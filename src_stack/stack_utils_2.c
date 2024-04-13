@@ -6,11 +6,11 @@
 /*   By: inazaria <inazaria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 15:01:32 by inazaria          #+#    #+#             */
-/*   Updated: 2024/04/13 03:34:22 by inazaria         ###   ########.fr       */
+/*   Updated: 2024/04/13 19:18:32 by inazaria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../include/common_funcs.h"
+#include "../include/common_funcs.h"
 
 void	display_stack(t_stack *stack)
 {
@@ -58,9 +58,9 @@ int	verify_input(int argc, char *argv[])
 
 int	verify_dups_in_input(t_stack *stack)
 {
-	int *elems;
-	int counter1;
-	int counter2;
+	int	*elems;
+	int	counter1;
+	int	counter2;
 
 	elems = stack->elems;
 	counter1 = 0;

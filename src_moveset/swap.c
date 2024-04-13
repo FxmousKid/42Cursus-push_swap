@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../include/common_funcs.h"
+#include "../include/common_funcs.h"
 
 void	swap(t_stack *stack)
 {

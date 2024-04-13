@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../include/common_funcs.h"
+#include "../include/common_funcs.h"
 
 void	ra_no_print(t_stack *stack_a)
 {

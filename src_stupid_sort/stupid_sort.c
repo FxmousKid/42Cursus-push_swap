@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../include/common_funcs.h"
+#include "../include/common_funcs.h"
 
 void	stupid_sort(t_stack *stack_a, t_stack *stack_b)
 {

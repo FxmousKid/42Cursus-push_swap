@@ -6,11 +6,11 @@
 /*   By: inazaria <inazaria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/13 00:41:07 by inazaria          #+#    #+#             */
-/*   Updated: 2024/04/13 02:26:50 by inazaria         ###   ########.fr       */
+/*   Updated: 2024/04/13 18:50:46 by inazaria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../include/common_funcs.h"
+#include "../include/common_funcs.h"
 
 void	sa_no_print(t_stack *stack_a)
 {

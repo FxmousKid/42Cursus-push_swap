@@ -6,11 +6,11 @@
 /*   By: inazaria <inazaria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 19:13:36 by inazaria          #+#    #+#             */
-/*   Updated: 2024/04/13 02:38:56 by inazaria         ###   ########.fr       */
+/*   Updated: 2024/04/13 18:49:22 by inazaria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../include/common_funcs.h"
+#include "../include/common_funcs.h"
 
 t_stack	*make_stack_a(int argc, char *argv[])
 {
