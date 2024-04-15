@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/common_funcs.h"
+#include "../../include/common_funcs.h"
 
 void	display_stack(t_stack *stack)
 {

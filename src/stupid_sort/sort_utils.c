@@ -6,11 +6,11 @@
 /*   By: inazaria <inazaria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 17:06:16 by inazaria          #+#    #+#             */
-/*   Updated: 2024/04/13 19:20:41 by inazaria         ###   ########.fr       */
+/*   Updated: 2024/04/14 20:44:30 by inazaria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/common_funcs.h"
+#include "../../include/common_funcs.h"
 
 int	get_min_depth(t_stack *stack)
 {

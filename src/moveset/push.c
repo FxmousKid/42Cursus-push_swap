@@ -6,11 +6,11 @@
 /*   By: inazaria <inazaria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 17:50:13 by inazaria          #+#    #+#             */
-/*   Updated: 2024/04/13 18:49:54 by inazaria         ###   ########.fr       */
+/*   Updated: 2024/04/14 20:44:15 by inazaria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/common_funcs.h"
+#include "../../include/common_funcs.h"
 
 int	pop_first_elem(t_stack *stack)
 {

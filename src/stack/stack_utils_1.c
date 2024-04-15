@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/common_funcs.h"
+#include "../../include/common_funcs.h"
 
 int	*return_int_stack(int argc, char *argv[])
 {

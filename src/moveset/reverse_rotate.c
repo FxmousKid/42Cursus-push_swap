@@ -6,11 +6,11 @@
 /*   By: inazaria <inazaria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 17:07:25 by inazaria          #+#    #+#             */
-/*   Updated: 2024/04/13 02:26:12 by inazaria         ###   ########.fr       */
+/*   Updated: 2024/04/15 15:23:23 by inazaria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/common_funcs.h"
+#include "../../include/common_funcs.h"
 
 void	reverse_rotate(t_stack *stack)
 {
@@ -47,4 +47,5 @@ void	rrr(t_stack *stack_a, t_stack *stack_b)
 {
 	rra_no_print(stack_a);
 	rrb_no_print(stack_b);
+	ft_printf("rrr\n");
 }
