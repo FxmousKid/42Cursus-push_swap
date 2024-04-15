@@ -6,19 +6,19 @@
 #    By: inazaria <inazaria@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/07 19:03:11 by inazaria          #+#    #+#              #
-#    Updated: 2024/04/13 17:42:45 by inazaria         ###   ########.fr        #
+#    Updated: 2024/04/15 16:18:41 by inazaria         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-MOVESET_SRC_FILES     = $(wildcard src_moveset/*.c)
-STACK_SRC_FILES       = $(wildcard src_stack/*.c)
-HELPERS_SRC_FILES     = $(wildcard src_helper/*.c)
-STUPID_SORT_SRC_FILES = $(wildcard src_stupid_sort/*.c)
+MOVESET_SRC_FILES     = $(wildcard src/moveset/*.c)
+STACK_SRC_FILES       = $(wildcard src/stack/*.c)
+HELPERS_SRC_FILES     = $(wildcard src/helper/*.c)
+#STUPID_SORT_SRC_FILES = $(wildcard src/stupid_sort/*.c)
 
 SRC_FILES   = $(STACK_SRC_FILES)
 SRC_FILES   += $(HELPERS_SRC_FILES)
 SRC_FILES   += $(MOVESET_SRC_FILES)
-SRC_FILES   += $(STUPID_SORT_SRC_FILES)
+#SRC_FILES   += $(STUPID_SORT_SRC_FILES)
 
 OBJ_FILES   = $(SRC_FILES:.c=.o)
 
@@ -28,6 +28,9 @@ CC          = cc
 BUFFER_SIZE = 1024
 INCLUDE     = ./include/
 CFLAGS      = -Wall -Wextra -Werror -g3 -I $(INCLUDE) -D BUFFER_SIZE=$(BUFFER_SIZE)
+ifeq ($(shell ls /usr/local/bin/egypt | wc -l ), 1)
+	CFLAGS += -fdump-rtl-expand
+endif
 RM          = rm -f
 
 
@@ -36,11 +39,17 @@ YELLOW		= $(shell echo -e "\033[33m")
 GREEN		= $(shell echo -e "\033[32m")
 END			= $(shell echo -e "\033[0m")
 
-
 .c.o :
 	@$(CC) $(CFLAGS) -c $< -o $@
  
-all : $(NAME) checker
+all : $(NAME) checker call_graph
+
+call_graph: libft $(OBJ_FILES)
+ifeq ($(shell ls /usr/local/bin/egypt | wc -l ), 1)
+	@echo "$(YELLOW)Creating call graph...$(END)"
+	@egypt push_swap*.expand */*/*.expand| dot -Gsize=11,8.5 -Tpdf -o callgrpah_push_swap.pdf
+	@echo "$(GREEN)Created call graph !$(END)"
+endif
 
 libft :
 	@$(MAKE) --no-print-directory -C ./libft
@@ -61,9 +70,15 @@ fclean :
 	@echo "$(YELLOW)Deleting push_swap obj files...$(END)"
 	@$(RM) $(OBJ_FILES) src/push_swap.o src/checker.o
 	@echo "$(YELLOW)Deleting push_swap...$(END)"
-	@$(RM) $(NAME)
+	@$(RM) $(NAME)rm 
 	@echo "$(YELLOW)Deleting checker...$(END)"
 	@$(RM) $(CHECKER)
+	@echo "$(YELLOW)Deleting .rtl files...$(END)"
+	@$(RM) */*/*.expand
+	@$(RM) */*.expand
+	@$(RM) *.expand
+	@echo "$(YELLOW)Deleting call graph...$(END)"
+	@$(RM) callgrpah_push_swap.pdf
 	@echo "$(YELLOW)Deleting libft obj files...$(END)"
 	@echo "$(YELLOW)Deleting libft.a...$(END)"
 	@$(MAKE) --no-print-directory -C ./libft fclean
@@ -72,6 +87,12 @@ fclean :
 clean :
 	@echo "$(YELLOW)Deleting push_swap obj files...$(END)"
 	$(RM) $(OBJ_FILES) src/push_swap.o src/checker.o
+	@echo "$(YELLOW)Deleting .rtl files...$(END)"
+	@@$(RM) */*/*.expand
+	@$(RM) */*.expand
+	@$(RM) *.expand
+	@echo "$(YELLOW)Deleting call graph...$(END)"
+	@$(RM) callgrpah_push_swap.pdf
 	@echo "$(YELLOW)Deleting libft obj files...$(END)"
 	$(MAKE) --no-print-directory -C ./libft clean
 	@echo "$(GREEN)Deleted all obj files !$(END)"
