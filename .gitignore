@@ -6,7 +6,12 @@
 # Visualiser folder
 push_swap_visualizer/
 
+# Function call graph related files
+***.expand
+*.pdf
+
 # Files related to the project
+!push_swap.pdf
 push_swap
 checker
 ***.o
