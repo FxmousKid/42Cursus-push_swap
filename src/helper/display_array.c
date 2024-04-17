@@ -1,28 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   make_stack_b.c                                     :+:      :+:    :+:   */
+/*   display_array.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: inazaria <inazaria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/09 22:14:53 by inazaria          #+#    #+#             */
-/*   Updated: 2024/04/15 18:50:21 by inazaria         ###   ########.fr       */
+/*   Created: 2024/04/15 17:18:56 by inazaria          #+#    #+#             */
+/*   Updated: 2024/04/16 02:12:55 by inazaria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../include/common_funcs.h"
+#include "../include/common_funcs.h"
 
-t_stack	*make_stack_b(int len_stack_a)
+void	display_int_array(int *array, int size)
 {
-	t_stack	*stack_b;
-	int		*stack_elems;
+	int i;
 
-	stack_b = (t_stack *) ft_calloc(sizeof(t_stack), 1);
-	if (!stack_b)
-		return (NULL);
-	stack_elems = (int *) ft_calloc(sizeof(int *), len_stack_a);
-	if (!stack_elems)
-		return (free(stack_b), NULL);
-	*stack_b = (t_stack){.elems = stack_elems, .length = 0};
-	return (stack_b);
+	i = 0;
+	ft_printf("Array: {");
+	while (i < size - 1)
+	{
+		ft_printf("%d ,", array[i]);
+		i++;
+	}
+	ft_printf("%d}\n", array[i]);
+	ft_printf("\n");
 }

@@ -1,28 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   make_stack_b.c                                     :+:      :+:    :+:   */
+/*   cost_utils_2.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: inazaria <inazaria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/09 22:14:53 by inazaria          #+#    #+#             */
-/*   Updated: 2024/04/15 18:50:21 by inazaria         ###   ########.fr       */
+/*   Created: 2024/04/15 19:14:08 by inazaria          #+#    #+#             */
+/*   Updated: 2024/04/15 20:05:02 by inazaria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../include/common_funcs.h"
+#include "../include/common_funcs.h"
 
-t_stack	*make_stack_b(int len_stack_a)
+int	cost_to_put_in_sorted(t_stack *to, int num)
 {
-	t_stack	*stack_b;
-	int		*stack_elems;
+	int	*elems;
+	int	len;
+	int	counter;
 
-	stack_b = (t_stack *) ft_calloc(sizeof(t_stack), 1);
-	if (!stack_b)
-		return (NULL);
-	stack_elems = (int *) ft_calloc(sizeof(int *), len_stack_a);
-	if (!stack_elems)
-		return (free(stack_b), NULL);
-	*stack_b = (t_stack){.elems = stack_elems, .length = 0};
-	return (stack_b);
+	elems = to->elems;
+	len = to->length;
+	counter = 0;
+	while (counter < len)
+	{
+		if (elems[counter] < num)
+			return (cost_to_move_on_top(to, counter));	
+		counter++;
+	}
+	return (INT_MAX);
 }

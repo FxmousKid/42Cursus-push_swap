@@ -1,28 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   make_stack_b.c                                     :+:      :+:    :+:   */
+/*   get_min_elem_array.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: inazaria <inazaria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/09 22:14:53 by inazaria          #+#    #+#             */
-/*   Updated: 2024/04/15 18:50:21 by inazaria         ###   ########.fr       */
+/*   Created: 2024/04/16 02:10:03 by inazaria          #+#    #+#             */
+/*   Updated: 2024/04/16 02:23:34 by inazaria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../include/common_funcs.h"
+#include "../include/common_funcs.h"
 
-t_stack	*make_stack_b(int len_stack_a)
+int	get_min_idx(int *array, int size)
 {
-	t_stack	*stack_b;
-	int		*stack_elems;
+	int	min_index;
+	int	i;
 
-	stack_b = (t_stack *) ft_calloc(sizeof(t_stack), 1);
-	if (!stack_b)
-		return (NULL);
-	stack_elems = (int *) ft_calloc(sizeof(int *), len_stack_a);
-	if (!stack_elems)
-		return (free(stack_b), NULL);
-	*stack_b = (t_stack){.elems = stack_elems, .length = 0};
-	return (stack_b);
+	if (size == 0)
+		return (INT_MAX);
+	min_index = 0;
+	i = 1;
+	while (i < size)
+	{
+		if (array[i] < array[min_index])
+			min_index = i;
+		i++;
+	}
+	return (min_index);
 }

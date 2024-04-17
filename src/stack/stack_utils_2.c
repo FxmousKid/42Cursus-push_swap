@@ -6,7 +6,7 @@
 /*   By: inazaria <inazaria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 15:01:32 by inazaria          #+#    #+#             */
-/*   Updated: 2024/04/13 19:18:32 by inazaria         ###   ########.fr       */
+/*   Updated: 2024/04/15 18:50:37 by inazaria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,9 +76,4 @@ int	verify_dups_in_input(t_stack *stack)
 		counter1++;
 	}
 	return (1);
-}
-
-int	is_stack_empty(t_stack *stack)
-{
-	return (stack->length == 0);
 }

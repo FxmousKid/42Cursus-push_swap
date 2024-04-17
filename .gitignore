@@ -3,8 +3,9 @@
 **.cache
 **compile_commands.json
 
-# Visualiser folder
+# Visualiser / Tester folders
 push_swap_visualizer/
+push_swap_tester/
 
 # Function call graph related files
 ***.expand

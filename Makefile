@@ -6,28 +6,30 @@
 #    By: inazaria <inazaria@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/07 19:03:11 by inazaria          #+#    #+#              #
-#    Updated: 2024/04/15 16:18:41 by inazaria         ###   ########.fr        #
+#    Updated: 2024/04/16 03:36:30 by inazaria         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 MOVESET_SRC_FILES     = $(wildcard src/moveset/*.c)
 STACK_SRC_FILES       = $(wildcard src/stack/*.c)
 HELPERS_SRC_FILES     = $(wildcard src/helper/*.c)
-#STUPID_SORT_SRC_FILES = $(wildcard src/stupid_sort/*.c)
+STUPID_SORT_SRC_FILES = $(wildcard src/stupid_sort/*.c)
+SMART_SORT_SRC_FILES  = $(wildcard src/smart_sort/*.c)
 
 SRC_FILES   = $(STACK_SRC_FILES)
 SRC_FILES   += $(HELPERS_SRC_FILES)
 SRC_FILES   += $(MOVESET_SRC_FILES)
-#SRC_FILES   += $(STUPID_SORT_SRC_FILES)
+SRC_FILES   += $(STUPID_SORT_SRC_FILES)
+SRC_FILES   += $(SMART_SORT_SRC_FILES)
 
 OBJ_FILES   = $(SRC_FILES:.c=.o)
 
 NAME        = push_swap
 CHECKER     = checker
-CC          = cc
+CC          = gcc
 BUFFER_SIZE = 1024
 INCLUDE     = ./include/
-CFLAGS      = -Wall -Wextra -Werror -g3 -I $(INCLUDE) -D BUFFER_SIZE=$(BUFFER_SIZE)
+CFLAGS      = -Wall -Wextra -Werror -g3 -I $(INCLUDE) -D BUFFER_SIZE=$(BUFFER_SIZE) -Wno-unknown-warning-option
 ifeq ($(shell ls /usr/local/bin/egypt | wc -l ), 1)
 	CFLAGS += -fdump-rtl-expand
 endif
@@ -47,7 +49,7 @@ all : $(NAME) checker call_graph
 call_graph: libft $(OBJ_FILES)
 ifeq ($(shell ls /usr/local/bin/egypt | wc -l ), 1)
 	@echo "$(YELLOW)Creating call graph...$(END)"
-	@egypt push_swap*.expand */*/*.expand| dot -Gsize=11,8.5 -Tpdf -o callgrpah_push_swap.pdf
+	@egypt push_swap*.expand src/smart_sort/*.expand src/stack/*.expand | dot -Gsize=11,8.5 -Tpdf -o callgrpah_push_swap.pdf
 	@echo "$(GREEN)Created call graph !$(END)"
 endif
 
@@ -86,15 +88,15 @@ fclean :
 
 clean :
 	@echo "$(YELLOW)Deleting push_swap obj files...$(END)"
-	$(RM) $(OBJ_FILES) src/push_swap.o src/checker.o
+	@$(RM) $(OBJ_FILES) src/push_swap.o src/checker.o
 	@echo "$(YELLOW)Deleting .rtl files...$(END)"
-	@@$(RM) */*/*.expand
+	@$(RM) */*/*.expand
 	@$(RM) */*.expand
 	@$(RM) *.expand
 	@echo "$(YELLOW)Deleting call graph...$(END)"
 	@$(RM) callgrpah_push_swap.pdf
 	@echo "$(YELLOW)Deleting libft obj files...$(END)"
-	$(MAKE) --no-print-directory -C ./libft clean
+	@$(MAKE) --no-print-directory -C ./libft clean
 	@echo "$(GREEN)Deleted all obj files !$(END)"
 
 re : fclean all
