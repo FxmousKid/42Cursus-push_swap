@@ -6,13 +6,13 @@
 /*   By: inazaria <inazaria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 17:07:25 by inazaria          #+#    #+#             */
-/*   Updated: 2024/04/29 04:51:36 by inazaria         ###   ########.fr       */
+/*   Updated: 2024/04/29 13:52:13 by inazaria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void	reverse_rotate_a(t_stacks *stacks)
+void	reverse_rotate_a(t_stacks *stacks)
 {
 	int	last;
 	int	*elems;
@@ -31,7 +31,7 @@ static void	reverse_rotate_a(t_stacks *stacks)
 	elems[0] = last;
 }
 
-static void	reverse_rotate_b(t_stacks *stacks)
+void	reverse_rotate_b(t_stacks *stacks)
 {
 	int	last;
 	int	*elems;

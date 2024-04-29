@@ -6,7 +6,7 @@
 /*   By: huaydin <huaydin@student.42vienna.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/25 13:25:59 by huaydin           #+#    #+#             */
-/*   Updated: 2024/04/29 05:22:54 by inazaria         ###   ########.fr       */
+/*   Updated: 2024/04/29 13:54:24 by inazaria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,15 @@ typedef struct s_stacks
 	char	*join_args;
 }			t_stacks;
 
+// Moveset utils
+
+void	rotate_a(t_stacks *stacks);
+void	rotate_b(t_stacks *stacks);
+void	reverse_rotate_a(t_stacks *stacks);
+void	reverse_rotate_b(t_stacks *stacks);
+void	swap_b(t_stacks *stacks);
+void	swap_a(t_stacks *stacks);
+
 //  Moveset
 void	pa(t_stacks *stacks);
 void	pb(t_stacks *stacks);
@@ -40,6 +49,19 @@ void	rr(t_stacks *stacks);
 void	rra(t_stacks *stacks);
 void	rrb(t_stacks *stacks);
 void	rrr(t_stacks *stacks);
+
+// Moveset no print for checker
+void	pa_no_print(t_stacks *stacks);
+void	pb_no_print(t_stacks *stacks);
+void	rra_no_print(t_stacks *stacks);
+void	rrb_no_print(t_stacks *stacks);
+void	rrr_no_print(t_stacks *stacks);
+void	ra_no_print(t_stacks *stacks);
+void	rb_no_print(t_stacks *stacks);
+void	rr_no_print(t_stacks *stacks);
+void	sa_no_print(t_stacks *stacks);
+void	sb_no_print(t_stacks *stacks);
+void	ss_no_print(t_stacks *stacks);
 
 //  Utils
 void	display_stack(t_stacks *stacks);
