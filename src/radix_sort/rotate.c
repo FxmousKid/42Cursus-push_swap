@@ -6,46 +6,65 @@
 /*   By: inazaria <inazaria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 19:32:51 by inazaria          #+#    #+#             */
-/*   Updated: 2024/04/15 15:23:37 by inazaria         ###   ########.fr       */
+/*   Updated: 2024/04/29 04:51:45 by inazaria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../include/common_funcs.h"
+#include "push_swap.h"
 
-void	rotate(t_stack *stack)
+void	rotate_a(t_stacks *stacks)
 {
 	int	first;
 	int	*elems;
 	int	counter;
 
-	if (stack->length < 2)
+	if (stacks->a_length < 2)
 		return ;
-	elems = stack->elems;
+	elems = stacks->a;
 	first = elems[0];
 	counter = 0;
-	while (counter < stack->length - 1)
+	while (counter < stacks->a_length - 1)
 	{
 		elems[counter] = elems[counter + 1];
 		counter++;
 	}
-	elems[stack->length - 1] = first;
+	elems[stacks->a_length - 1] = first;
 }
 
-void	ra(t_stack *stack_a)
+void	rotate_b(t_stacks *stacks)
 {
-	rotate(stack_a);
+	int	first;
+	int	*elems;
+	int	counter;
+
+	if (stacks->b_length < 2)
+		return ;
+	elems = stacks->b;
+	first = elems[0];
+	counter = 0;
+	while (counter < stacks->b_length - 1)
+	{
+		elems[counter] = elems[counter + 1];
+		counter++;
+	}
+	elems[stacks->b_length - 1] = first;
+}
+
+void	ra(t_stacks *stacks)
+{
+	rotate_a(stacks);
 	ft_printf("ra\n");
 }
 
-void	rb(t_stack *stack_b)
+void	rb(t_stacks *stacks)
 {
-	rotate(stack_b);
+	rotate_b(stacks);
 	ft_printf("rb\n");
 }
 
-void	rr(t_stack *stack_a, t_stack *stack_b)
+void	rr(t_stacks *stacks)
 {
-	ra_no_print(stack_a);
-	rb_no_print(stack_b);
+	rotate_a(stacks);
+	rotate_b(stacks);
 	ft_printf("rr\n");
 }

@@ -6,58 +6,86 @@
 /*   By: inazaria <inazaria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 17:50:13 by inazaria          #+#    #+#             */
-/*   Updated: 2024/04/14 20:44:15 by inazaria         ###   ########.fr       */
+/*   Updated: 2024/04/29 04:51:25 by inazaria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../include/common_funcs.h"
+#include "push_swap.h"
 
-int	pop_first_elem(t_stack *stack)
+static int	pop_first_elem_a(t_stacks *stacks)
 {
 	int	first;
 	int	counter;
 	int	*elems;
 
-	first = stack->elems[0];
+	first = stacks->a[0];
 	counter = 0;
-	elems = stack->elems;
-	while (counter < stack->length)
+	elems = stacks->a;
+	while (counter < stacks->a_length)
 	{
 		elems[counter] = elems[counter + 1];
 		counter++;
 	}
-	stack->length--;
+	stacks->a_length--;
 	return (first);
 }
 
-void	push(t_stack *from, t_stack *to)
+static int	pop_first_elem_b(t_stacks *stacks)
+{
+	int	first;
+	int	counter;
+	int	*elems;
+
+	first = stacks->b[0];
+	counter = 0;
+	elems = stacks->b;
+	while (counter < stacks->b_length)
+	{
+		elems[counter] = elems[counter + 1];
+		counter++;
+	}
+	stacks->b_length--;
+	return (first);
+}
+
+void	pa(t_stacks *stacks)
 {
 	int	first_from;
 	int	*elems_to;
 	int	len_to;
 
-	if (from->length < 1 || to->length > 499)
+	if (stacks->b_length < 1)
 		return ;
-	first_from = pop_first_elem(from);
-	elems_to = to->elems;
-	len_to = to->length;
+	first_from = pop_first_elem_b(stacks);
+	elems_to = stacks->a;
+	len_to = stacks->a_length;
 	while (len_to > 0)
 	{
 		elems_to[len_to] = elems_to[len_to - 1];
 		len_to--;
 	}
-	to->elems[0] = first_from;
-	to->length++;
-}
-
-void	pa(t_stack *stack_a, t_stack *stack_b)
-{
-	push(stack_b, stack_a);
+	stacks->a[0] = first_from;
+	stacks->a_length++;
 	ft_printf("pa\n");
 }
 
-void	pb(t_stack *stack_a, t_stack *stack_b)
+void	pb(t_stacks *stacks)
 {
-	push(stack_a, stack_b);
+	int	first_from;
+	int	*elems_to;
+	int	len_to;
+
+	if (stacks->a_length < 1)
+		return ;
+	first_from = pop_first_elem_a(stacks);
+	elems_to = stacks->b;
+	len_to = stacks->b_length;
+	while (len_to > 0)
+	{
+		elems_to[len_to] = elems_to[len_to - 1];
+		len_to--;
+	}
+	stacks->b[0] = first_from;
+	stacks->b_length++;
 	ft_printf("pb\n");
 }
