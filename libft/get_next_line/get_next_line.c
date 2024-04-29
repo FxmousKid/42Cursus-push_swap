@@ -6,7 +6,7 @@
 /*   By: inazaria <inazaria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/02 18:40:34 by inazaria          #+#    #+#             */
-/*   Updated: 2024/04/08 23:11:43 by inazaria         ###   ########.fr       */
+/*   Updated: 2024/04/29 13:56:10 by inazaria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,12 +60,12 @@ char	*concat_current_line(char *current_line, char *buffer_line)
 	tmp = current_line;
 	if (current_line == NULL)
 	{
-		current_line = ft_strjoin("", buffer_line);
+		current_line = ft_join("", buffer_line);
 		free(tmp);
 		free(buffer_line);
 		return (current_line);
 	}
-	current_line = ft_strjoin(tmp, buffer_line);
+	current_line = ft_join(tmp, buffer_line);
 	free(tmp);
 	free(buffer_line);
 	return (current_line);

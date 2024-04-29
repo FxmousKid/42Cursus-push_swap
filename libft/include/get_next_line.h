@@ -6,7 +6,7 @@
 /*   By: inazaria <inazaria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/27 11:38:48 by inazaria          #+#    #+#             */
-/*   Updated: 2024/04/02 01:55:53 by inazaria         ###   ########.fr       */
+/*   Updated: 2024/04/29 13:56:24 by inazaria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ char	*concat_current_line(char *current_line, char *buffer_line);
 char	*get_next_line(int fd);
 char	*malloc_line(int fd);
 int		nl_detection(char *tab);
-char	*ft_strjoin(char *s1, char *s2);
+char	*ft_join(char *s1, char *s2);
 char	**split(char *str, int pos);
 ssize_t	ft_strlen_to_char(char *str, char c);
 
