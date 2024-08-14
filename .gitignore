@@ -16,6 +16,7 @@ push_swap_tester/
 push_swap
 checker
 ***.o
+***.d
 libft/libft.a
 
 # Visualiser files
