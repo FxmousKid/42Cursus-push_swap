@@ -6,7 +6,7 @@
 /*   By: inazaria <inazaria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/29 01:34:05 by inazaria          #+#    #+#             */
-/*   Updated: 2024/05/25 16:09:53 by inazaria         ###   ########.fr       */
+/*   Updated: 2024/08/18 02:48:02 by inazaria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	sort_3(t_stacks *stacks)
 {
-	int	*elems;
+	long	*elems;
 
 	if (stacks->a_length != 3)
 		return ;
@@ -63,9 +63,9 @@ void	sort_4_5(t_stacks *stacks)
 
 int	is_a_sorted(t_stacks *stacks)
 {
-	int	idx;
-	int	*array;
-	int	length;
+	int		idx;
+	long	*array;
+	int		length;
 
 	idx = 0;
 	array = stacks->a;

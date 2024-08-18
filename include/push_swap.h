@@ -6,7 +6,7 @@
 /*   By: huaydin <huaydin@student.42vienna.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/25 13:25:59 by huaydin           #+#    #+#             */
-/*   Updated: 2024/08/14 17:22:21 by inazaria         ###   ########.fr       */
+/*   Updated: 2024/08/18 03:36:11 by inazaria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@
 
 typedef struct s_stacks
 {
-	int		*a;
-	int		*b;
+	long	*a;
+	long	*b;
 	int		a_length;
 	int		b_length;
 	char	*join_args;
@@ -65,7 +65,7 @@ void	ss_no_print(t_stacks *stacks);
 
 //  Utils
 void	display_stack(t_stacks *stacks);
-int		ft_atol(const char *n, t_stacks *s);
+long	ft_atol(const char *n, t_stacks *s);
 void	free_stacks(t_stacks *stacks);
 
 //  Error Handling

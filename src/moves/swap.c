@@ -6,7 +6,7 @@
 /*   By: inazaria <inazaria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 12:20:20 by inazaria          #+#    #+#             */
-/*   Updated: 2024/04/29 05:20:06 by inazaria         ###   ########.fr       */
+/*   Updated: 2024/08/18 02:59:09 by inazaria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	swap_a(t_stacks *stacks)
 {
-	int	tmp;
-	int	*elems;
+	long	tmp;
+	long	*elems;
 
 	if (stacks->a_length < 2)
 		return ;
@@ -27,8 +27,8 @@ void	swap_a(t_stacks *stacks)
 
 void	swap_b(t_stacks *stacks)
 {
-	int	tmp;
-	int	*elems;
+	long	tmp;
+	long	*elems;
 
 	if (stacks->b_length < 2)
 		return ;

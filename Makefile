@@ -6,7 +6,7 @@
 #    By: inazaria <inazaria@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/07 19:03:11 by inazaria          #+#    #+#              #
-#    Updated: 2024/08/14 00:30:53 by inazaria         ###   ########.fr        #
+#    Updated: 2024/08/18 02:59:46 by inazaria         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -85,7 +85,7 @@ $(NAME): $(OBJ_FILES)
 $(CHECKER) : $(OBJ_FILES)
 	@echo -e "$(BROWN)[BLD] Building checker executable...$(NC)"
 	@$(CC) $(CFLAGS) -c src/checker.c -o build/checker.o
-	@$(CC) $(CFLAGS) $^ builf/checker.o libft/libft.a -o $(CHECKER)
+	@$(CC) $(CFLAGS) $^ build/checker.o libft/libft.a -o $(CHECKER)
 	@echo -e "$(GREEN)[BLD] Executable built successfully.$(NC)"
 
 fclean : 

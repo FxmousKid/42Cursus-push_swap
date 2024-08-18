@@ -6,7 +6,7 @@
 /*   By: inazaria <inazaria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 21:58:33 by inazaria          #+#    #+#             */
-/*   Updated: 2024/08/10 15:26:59 by inazaria         ###   ########.fr       */
+/*   Updated: 2024/08/18 02:36:33 by inazaria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ int	main(int argc, char **argv)
 	t_stacks	*stacks;
 
 	validate_arguments(argc, argv);
-	stacks = (t_stacks *) malloc(sizeof (t_stacks));
+	stacks = (t_stacks *) ft_calloc(sizeof(t_stacks), 1);
 	if (stacks == NULL)
 		exit(1);
 	initialize_stacks(argc, argv, stacks);

@@ -6,7 +6,7 @@
 /*   By: inazaria <inazaria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 17:07:25 by inazaria          #+#    #+#             */
-/*   Updated: 2024/04/29 13:52:13 by inazaria         ###   ########.fr       */
+/*   Updated: 2024/08/18 02:54:31 by inazaria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 void	reverse_rotate_a(t_stacks *stacks)
 {
-	int	last;
-	int	*elems;
-	int	len;
+	int		last;
+	long	*elems;
+	int		len;
 
 	if (stacks->a_length < 2)
 		return ;
@@ -33,9 +33,9 @@ void	reverse_rotate_a(t_stacks *stacks)
 
 void	reverse_rotate_b(t_stacks *stacks)
 {
-	int	last;
-	int	*elems;
-	int	len;
+	int		last;
+	long	*elems;
+	int		len;
 
 	if (stacks->b_length < 2)
 		return ;

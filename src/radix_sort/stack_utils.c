@@ -6,7 +6,7 @@
 /*   By: inazaria <inazaria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/28 18:22:35 by inazaria          #+#    #+#             */
-/*   Updated: 2024/04/29 13:28:44 by inazaria         ###   ########.fr       */
+/*   Updated: 2024/08/18 03:46:01 by inazaria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ void	free_and_exit(t_stacks *stacks, char *message)
 		if (stacks->join_args != NULL)
 			free(stacks->join_args);
 	}
+	free(stacks);
 	exit(1);
 }
 

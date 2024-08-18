@@ -6,7 +6,7 @@
 /*   By: inazaria <inazaria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/29 01:33:55 by inazaria          #+#    #+#             */
-/*   Updated: 2024/05/24 22:16:15 by inazaria         ###   ########.fr       */
+/*   Updated: 2024/08/18 03:52:25 by inazaria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,22 +65,22 @@ void	initialize_stacks(int argc, char **argv, t_stacks *stacks)
 			stacks->a_length++;
 		counter++;
 	}
-	stacks->a = (int *) ft_calloc(stacks->a_length, sizeof (int));
+	stacks->a = (long *) ft_calloc(stacks->a_length, sizeof (long));
 	if (stacks->a == NULL)
 		free_and_exit(stacks, "Error\n");
-	stacks->b = (int *) ft_calloc(stacks->a_length, sizeof(int));
+	stacks->b = (long *) ft_calloc(stacks->a_length, sizeof(long));
 	if (stacks->b == NULL)
 		free_and_exit(stacks, "Error\n");
 }
 
 void	create_index(t_stacks *stacks)
 {
-	int		idx1;
-	int		idx2;
-	int		true_idx;
-	int		*new_a;
+	long	idx1;
+	long	idx2;
+	long	true_idx;
+	long	*new_a;
 
-	new_a = (int *) ft_calloc(stacks->a_length, sizeof (int));
+	new_a = (long *) ft_calloc(stacks->a_length, sizeof (long));
 	if (new_a == NULL)
 		free_and_exit(stacks, "Error\n");
 	idx1 = 0;
@@ -102,7 +102,7 @@ void	create_index(t_stacks *stacks)
 	free(new_a);
 }
 
-int	ft_atol(const char *num, t_stacks *stacks)
+long	ft_atol(const char *num, t_stacks *stack)
 {
 	int			idx;
 	int			sign;
@@ -111,6 +111,7 @@ int	ft_atol(const char *num, t_stacks *stacks)
 	res = 0;
 	sign = 1;
 	idx = 0;
+	(void) stack;
 	while (num[idx] == ' ' || (num[idx] >= '\t' && num[idx] <= '\r'))
 		idx++;
 	if ((num[idx] == '+' || num[idx] == '-'))
@@ -121,12 +122,8 @@ int	ft_atol(const char *num, t_stacks *stacks)
 	}
 	while (num[idx])
 	{
-		if (res > INT_MAX || (res * sign) < INT_MIN)
-			free_and_exit(stacks, "Error\n");
-		if (num[idx] < '0' && num[idx] > '9')
-			free_and_exit(stacks, "Error\n");
 		res = res * 10 + (num[idx] - '0');
 		idx++;
 	}
-	return ((int)(res * sign));
+	return (res * sign);
 }

@@ -6,7 +6,7 @@
 /*   By: inazaria <inazaria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 17:50:13 by inazaria          #+#    #+#             */
-/*   Updated: 2024/08/14 00:19:43 by inazaria         ###   ########.fr       */
+/*   Updated: 2024/08/18 02:50:26 by inazaria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 static int	pop_first_elem_a(t_stacks *stacks)
 {
-	int	first;
-	int	counter;
-	int	*elems;
+	int		first;
+	int		counter;
+	long	*elems;
 
 	first = stacks->a[0];
 	counter = 0;
@@ -32,9 +32,9 @@ static int	pop_first_elem_a(t_stacks *stacks)
 
 static int	pop_first_elem_b(t_stacks *stacks)
 {
-	int	first;
-	int	counter;
-	int	*elems;
+	int		first;
+	int		counter;
+	long	*elems;
 
 	first = stacks->b[0];
 	counter = 0;
@@ -50,9 +50,9 @@ static int	pop_first_elem_b(t_stacks *stacks)
 
 void	pa(t_stacks *stacks)
 {
-	int	first_from;
-	int	*elems_to;
-	int	len_to;
+	int		first_from;
+	long	*elems_to;
+	int		len_to;
 
 	if (stacks->b_length < 1)
 		return ;
@@ -71,9 +71,9 @@ void	pa(t_stacks *stacks)
 
 void	pb(t_stacks *stacks)
 {
-	int	first_from;
-	int	*elems_to;
-	int	len_to;
+	int		first_from;
+	long	*elems_to;
+	int		len_to;
 
 	if (stacks->a_length < 1)
 		return ;

@@ -6,7 +6,7 @@
 /*   By: inazaria <inazaria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 19:32:51 by inazaria          #+#    #+#             */
-/*   Updated: 2024/04/29 13:52:40 by inazaria         ###   ########.fr       */
+/*   Updated: 2024/08/18 02:58:39 by inazaria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 void	rotate_a(t_stacks *stacks)
 {
-	int	first;
-	int	*elems;
-	int	counter;
+	long	first;
+	long	*elems;
+	int		counter;
 
 	if (stacks->a_length < 2)
 		return ;
@@ -33,9 +33,9 @@ void	rotate_a(t_stacks *stacks)
 
 void	rotate_b(t_stacks *stacks)
 {
-	int	first;
-	int	*elems;
-	int	counter;
+	long	first;
+	long	*elems;
+	int		counter;
 
 	if (stacks->b_length < 2)
 		return ;
