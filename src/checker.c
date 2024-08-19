@@ -6,7 +6,7 @@
 /*   By: inazaria <inazaria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 21:58:33 by inazaria          #+#    #+#             */
-/*   Updated: 2024/08/18 02:36:33 by inazaria         ###   ########.fr       */
+/*   Updated: 2024/08/19 14:53:28 by inazaria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,27 +14,27 @@
 
 void	apply_instruction(char *op, t_stacks *stacks)
 {
-	if (ft_strncmp(op, "rra", 3) == 0)
+	if (ft_strncmp(op, "rra\n", 4) == 0 && ft_strlen(op) == 4)
 		rra_no_print(stacks);
-	else if (ft_strncmp(op, "rrb", 3) == 0)
+	else if (ft_strncmp(op, "rrb\n", 4) == 0 && ft_strlen(op) == 4)
 		rrb_no_print(stacks);
-	else if (ft_strncmp(op, "rrr", 3) == 0)
+	else if (ft_strncmp(op, "rrr\n", 4) == 0 && ft_strlen(op) == 4)
 		rrr_no_print(stacks);
-	else if (ft_strncmp(op, "sa", 2) == 0)
+	else if (ft_strncmp(op, "sa", 2) == 0 && ft_strlen(op) == 2)
 		sa_no_print(stacks);
-	else if (ft_strncmp(op, "sb", 2) == 0)
+	else if (ft_strncmp(op, "sb", 2) == 0 && ft_strlen(op) == 2)
 		sb_no_print(stacks);
-	else if (ft_strncmp(op, "ss", 2) == 0)
+	else if (ft_strncmp(op, "ss", 2) == 0 && ft_strlen(op) == 2)
 		ss_no_print(stacks);
-	else if (ft_strncmp(op, "pa", 2) == 0)
+	else if (ft_strncmp(op, "pa", 2) == 0 && ft_strlen(op) == 2)
 		pa_no_print(stacks);
-	else if (ft_strncmp(op, "pb", 2) == 0)
+	else if (ft_strncmp(op, "pb", 2) == 0 && ft_strlen(op) == 2)
 		pb_no_print(stacks);
-	else if (ft_strncmp(op, "ra", 2) == 0)
+	else if (ft_strncmp(op, "ra", 2) == 0 && ft_strlen(op) == 2)
 		ra_no_print(stacks);
-	else if (ft_strncmp(op, "rb", 2) == 0)
+	else if (ft_strncmp(op, "rb", 2) == 0 && ft_strlen(op) == 2)
 		rb_no_print(stacks);
-	else if (ft_strncmp(op, "rr", 2) == 0)
+	else if (ft_strncmp(op, "rr", 2) == 0 && ft_strlen(op) == 2)
 		rr_no_print(stacks);
 	else
 		ft_putstr_fd("Error\n", 2);
