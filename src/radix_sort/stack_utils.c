@@ -6,7 +6,7 @@
 /*   By: inazaria <inazaria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/28 18:22:35 by inazaria          #+#    #+#             */
-/*   Updated: 2024/08/19 13:15:18 by inazaria         ###   ########.fr       */
+/*   Updated: 2024/08/19 14:22:03 by inazaria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ void	verify_argv_entry(char *argv[], int i, int j)
 		|| (argv[i][j] == '+' && argv[i][j + 1] == '\0')
 		|| (argv[i][j] == '-' && argv[i][j + 1] == ' ')
 		|| (argv[i][j] == '+' && argv[i][j + 1] == ' ')
-		|| ((!ft_isdigit(argv[i][j])) && (argv[i][j] != ' ') 
+		|| ((!ft_isdigit(argv[i][j])) && (argv[i][j] != ' ')
 		&& (argv[i][j] != '-')))
 			free_and_exit(NULL, "Error\n");
 		j++;

@@ -6,7 +6,7 @@
 /*   By: inazaria <inazaria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/29 01:33:55 by inazaria          #+#    #+#             */
-/*   Updated: 2024/08/19 14:16:07 by inazaria         ###   ########.fr       */
+/*   Updated: 2024/08/19 14:21:33 by inazaria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,10 +59,6 @@ void	initialize_stacks(int argc, char **argv, t_stacks *stacks)
 	stacks->b_length = 0;
 	while (--argc)
 	{
-		// if (count_words(argv[counter + 1], ' '))
-		// 	stacks->a_length += count_words(argv[counter + 1], ' ');
-		// else
-		// 	stacks->a_length++;
 		stacks->a_length += count_words(argv[counter + 1], ' ');
 		counter++;
 	}
