@@ -6,7 +6,7 @@
 /*   By: inazaria <inazaria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 17:07:25 by inazaria          #+#    #+#             */
-/*   Updated: 2024/08/18 02:54:31 by inazaria         ###   ########.fr       */
+/*   Updated: 2024/08/19 14:17:32 by inazaria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	reverse_rotate_a(t_stacks *stacks)
 {
-	int		last;
+	long	last;
 	long	*elems;
 	int		len;
 
@@ -23,9 +23,9 @@ void	reverse_rotate_a(t_stacks *stacks)
 	elems = stacks->a;
 	len = stacks->a_length;
 	last = elems[len - 1];
-	while (len > 0)
+	while (len > 1)
 	{
-		elems[len] = elems[len - 1];
+		elems[len - 1] = elems[len - 2];
 		len--;
 	}
 	elems[0] = last;
@@ -33,7 +33,7 @@ void	reverse_rotate_a(t_stacks *stacks)
 
 void	reverse_rotate_b(t_stacks *stacks)
 {
-	int		last;
+	long	last;
 	long	*elems;
 	int		len;
 
@@ -42,9 +42,9 @@ void	reverse_rotate_b(t_stacks *stacks)
 	elems = stacks->b;
 	len = stacks->b_length;
 	last = elems[len - 1];
-	while (len > 0)
+	while (len > 1)
 	{
-		elems[len] = elems[len - 1];
+		elems[len - 1] = elems[len - 2];
 		len--;
 	}
 	elems[0] = last;
